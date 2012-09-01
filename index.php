@@ -11,4 +11,4 @@ list($status, $headers, $body) = parse_request($config, array(
   'files'=>$_FILES
 ));
 
-execute($status, $headers, $body);
+respond($status, $headers, $body);

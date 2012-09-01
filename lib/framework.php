@@ -25,7 +25,7 @@ function parse_request($config, $request) {
  *
  * Returns nothing
  */
-function execute($status, $headers, $body) {
+function respond($status, $headers, $body) {
   header("HTTP/1.0 $status"); // For now, we don't put any status string; only the status code
   foreach ($headers as $key => $value) {
     header("$key: $value");
