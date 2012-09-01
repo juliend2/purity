@@ -2,7 +2,7 @@ Purity
 ======
 
 *Purity* is my small experiment to create a PHP framework that tries to embrace
-the concept of [functional purity](http://en.wikipedia.org/wiki/Pure_function).
+the concept of [pure functions](http://en.wikipedia.org/wiki/Pure_function).
 
 It also features a Rack-like interface for HTTP responses.
 
