@@ -24,6 +24,7 @@ With Purity, index.php as a bit like the config.ru file on any Rack app:
 it contains the configurations, the library includes and it executes the app.
 
 Your index.php should (in that order):
+
 1. include the purity framework (using `include 'lib/purity/purity.php'`), 
 1. include other libraries (if needed)
 1. declare an $env global variable (in which you would have at least a `php`,
