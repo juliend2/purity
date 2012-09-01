@@ -6,7 +6,7 @@
  * 
  * returns a response array : status (Integer), headers (Hash) and body (String)
  */
-function app($config, $request) {
+function parse_request($config, $request) {
   // perform the action routing:
   $uri = isset($request['get']['uri']) ? $request['get']['uri'] : '/';
   if (isset($config['routes']) && isset($config['routes'][$uri])) {
