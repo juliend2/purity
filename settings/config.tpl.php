@@ -1,7 +1,9 @@
 <?php
 
 $config = array(
-  'basepath' => 'http://localhost:8888/purity/',
+  'baseurl' => 'http://localhost:8888/purity/',
+  'basepath' => dirname(__FILE__).'/../',
+  'viewspath' => dirname(__FILE__).'/../views/',
   'routes' => array(
     '/' => array('ThingsController', 'index'),
     '/joy' => array('ThingsController', 'joy'),
@@ -13,4 +15,5 @@ $config = array(
     'name' => 'mysqltest'
   )
 );
+
 
