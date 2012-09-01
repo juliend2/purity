@@ -26,10 +26,11 @@ function get_chunk($filename, $vars=null){
   return $content;
 }
 
-function get_view_path($basepath, $app_name, $view_file) {
-  return $basepath.'apps/'.$app_name.'/views/'.$view_file;
+function get_view_path($viewspath, $app_name, $view_file) {
+  return $viewspath.$app_name.'/views/'.$view_file;
 }
 
 function get_view($basepath, $app_name, $view_file, $vars = null) {
   return get_chunk(get_view_path($basepath, $app_name, $view_file), $vars);
 }
+

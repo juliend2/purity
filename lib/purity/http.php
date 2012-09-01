@@ -9,11 +9,11 @@ function parse_request($env) {
   foreach ($env['mappings'] as $map => $app) { 
     // map is found at the beginning of current the URI?
     if (strpos($uri, $map) === 0) { 
-      include "{$env['basepath']}apps/$app"; // include the app
+      include "{$env['appspath']}$app"; // include the app
       // loop into all the app's routes
       foreach ($routes as $route => $callable) { 
         // current URI matches this route?
-        if ("$map/$route" === $uri || ($map === $uri && $route === '')) { 
+        if ("$map/$route" === $uri || "$map$route" === $uri || ($map === $uri && $route === '')) { 
           return call_user_func($callable, $env); // parse the app's action
         }
       }

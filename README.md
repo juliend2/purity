@@ -22,18 +22,18 @@ How it works
 For this, use the index.tpl.php file as a template.
 With Purity, index.php as a bit like the config.ru file on any Rack app; it should (in that order):
 
-1. include the purity framework (using `include 'lib/purity/purity.php'`), 
+1. include the purity framework (using something like `include 'lib/purity/purity.php'`), 
 1. include other libraries (if needed)
 1. declare an $env global variable (in which you would have at least a `php`,
    `basepath`, and a `mappings` key.
 1. parse the request (using `parse_request`)
 1. respond to request (using `respond`)
 
-### 2. Create as many apps you want in the apps/ folder
+### 2. Create an app
 
 Each app folder must contain at the very least an app.php file at the root
 level, a controller folder containing your controller class. 
-app.php MUST contain a global $routes hash that defines routes, like
+app.php MUST contain a $routes (hash) variable that defines routes, like
 this:
 
     $routes = array(
