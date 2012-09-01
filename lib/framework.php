@@ -33,4 +33,27 @@ function execute($status, $headers, $body) {
   echo $body;
 }
 
+// $filename : String
+// $vars : Hash of parameters to pass to the view
+//
+// Return as String of the processed view
+function return_view($filename, $vars=null){
+  $content = '';
+  ob_start();
+
+  if(!is_null($vars)) {
+    extract($vars);
+  }
+
+  if (file_exists($filename) === false) {
+    throw new Exception("The template $filename does not exist.");
+  } else {
+    include $filename;
+  }
+
+  $content = ob_get_contents();
+
+  ob_end_clean();
+  return $content;
+}
 
