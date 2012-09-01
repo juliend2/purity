@@ -20,10 +20,7 @@ How it works
 ### 1. Create an index.php file
 
 For this, use the index.tpl.php file as a template.
-With Purity, index.php as a bit like the config.ru file on any Rack app:
-it contains the configurations, the library includes and it executes the app.
-
-Your index.php should (in that order):
+With Purity, index.php as a bit like the config.ru file on any Rack app; it should (in that order):
 
 1. include the purity framework (using `include 'lib/purity/purity.php'`), 
 1. include other libraries (if needed)
