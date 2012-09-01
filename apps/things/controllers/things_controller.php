@@ -2,7 +2,7 @@
 
 class ThingsController {
   public static 
-    $app_name = 'things';
+    $name = 'things';
 
   public static function index($env) {
     $db = db_or_config($env['db']);
@@ -10,7 +10,7 @@ class ThingsController {
     return array(
       200,
       array(),
-      get_view($env['basepath'], self::$app_name, 'index.php',
+      get_view($env['basepath'], self::$name, 'index.php',
         array( 'something' => $data)
       )
     );

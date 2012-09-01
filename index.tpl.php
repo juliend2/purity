@@ -8,7 +8,8 @@ $env = array(
   'php' => $superglobals, 
 
   'basepath' => dirname(__FILE__).'/',
-  // Applications mapping:
+
+  // Application URL mappings:
   'mappings' => array(
     '/snippets' => 'snippets/app.php',
     '/' => 'things/app.php',

@@ -3,14 +3,13 @@
 class SnippetsController {
 
   public static 
-    $app_name = 'snippets';
+    $name = 'snippets';
 
   public static function index($env) {
     return array(
       200,
       array(),
-      get_view(
-        $env['basepath'], self::$app_name, 'index.php',
+      get_view($env['basepath'], self::$name, 'index.php',
         array('title'=>'Snippets App')
       )
     );
@@ -20,7 +19,7 @@ class SnippetsController {
     return array(
       200,
       array(),
-      get_view($env['basepath'], self::$app_name, 'show.php',
+      get_view($env['basepath'], self::$name, 'show.php',
         array('snippet'=>'Joie')
       )
     );
