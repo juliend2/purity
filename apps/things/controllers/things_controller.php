@@ -1,14 +1,16 @@
 <?php
 
 class ThingsController {
+  public static 
+    $app_name = 'things';
+
   public static function index($env) {
-    $db = db_or_config($env['config']['db']);
+    $db = db_or_config($env['db']);
     $data = db_find($db, "SELECT * FROM test");
     return array(
       200,
       array(),
-      return_view(
-        $env['config']['viewspath'].'things/index.php', 
+      get_view($env['basepath'], self::$app_name, 'index.php',
         array( 'something' => $data)
       )
     );

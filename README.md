@@ -14,4 +14,8 @@ My motivation with this is to see how far I can go in creating PHP web apps
 with the less side effects possible, to increase maintainability an code
 reusability.
 
+How it works
+------------
 
+1. You create an index.php at the base level of your app.
+1. You 
