@@ -14,5 +14,3 @@
   # substitution string to the existing string, instead of replacing it.
 
 </IfModule>
-
-php_flag magic_quotes_gpc Off
