@@ -1,16 +1,19 @@
 <?php
 
 /*
- * $config : Hash of configuration
- * $request : Hash with the GET, POST and FILES parameters for this request
+ * $env : Hash of environment that contains:
+ *  - config
+ *  - get
+ *  - post
+ *  - files
  * 
  * returns a response array : status (Integer), headers (Hash) and body (String)
  */
-function parse_request($config, $request) {
+function parse_request($env) {
   // perform the action routing:
-  $uri = isset($request['get']['uri']) ? $request['get']['uri'] : '/';
-  if (isset($config['routes']) && isset($config['routes'][$uri])) {
-    return call_user_func($config['routes'][$uri], $config, $request);
+  $uri = isset($env['get']['uri']) ? $env['get']['uri'] : '/';
+  if (isset($env['config']['routes']) && isset($env['config']['routes'][$uri])) {
+    return call_user_func($env['config']['routes'][$uri], $env);
   }
   // 404 error:
   return array(404, array(), "Not Found! :(");
