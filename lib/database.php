@@ -5,14 +5,8 @@
  *
  * Returns a DB link (the same as the param, or a newly created one)
  */
-function db_or_config($db_or_config) {
-  if ($db_or_config instanceof MySQLi) {
-    $db = $db_or_config;
-    return $db;
-  } else {
-    $config = $db_or_config;
-    return mysqli_connect($config['host'], $config['user'], $config['pass'], $config['name']);
-  }
+function get_db($db_config) {
+  return mysqli_connect($db_config['host'], $db_config['user'], $db_config['pass'], $db_config['name']);
 }
 
 /*
@@ -20,8 +14,8 @@ function db_or_config($db_or_config) {
  *
  * Returns an Array of row data as Hashes
  */
-function db_find($db_or_config, $statement) {
-  $result = mysqli_query($db_or_config, $statement);
+function db_find($db, $statement) {
+  $result = mysqli_query($db, $statement);
   $array = array();
   while ($data = mysqli_fetch_assoc($result)) {
     $array[] = $data;
@@ -30,3 +24,9 @@ function db_find($db_or_config, $statement) {
   return $array;
 }
 
+function db_find_first($db, $statement) {
+  $result = mysqli_query($db, $statement);
+  $returned = mysqli_fetch_assoc($result);
+  mysqli_free_result($result);
+  return $returned;
+}

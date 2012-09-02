@@ -20,7 +20,7 @@ function parse_request($env) {
     }
   }
   // reached if no route matched:
-  return array(404, array(), "<h1>404 Error</h1> Not found.");
+  return not_found("<h1>404 Error</h1> Not found.");
 }
 
 // Takes:
@@ -37,6 +37,25 @@ function respond($status, $headers, $body) {
     header("$key: $value");
   }
   echo $body;
+}
+
+// Takes a $body (String)
+//
+// Returns a 200 (successful) response.
+function success($body) {
+  return array(200, array(), $body);
+}
+
+function error($body) {
+  return array(500, array(), $body);
+}
+
+function redirect($to) {
+  return array(301, array('Location'=>$to), '');
+}
+
+function not_found($msg = "Not found.") {
+  return array(404, array(), $msg);
 }
 
 

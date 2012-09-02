@@ -2,6 +2,7 @@
 
 include_once "http.php";
 include_once "output.php";
+include_once "helpers.php";
 
 session_start();
 
