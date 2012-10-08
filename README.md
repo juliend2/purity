@@ -1,8 +1,8 @@
 Purity
 ======
 
-*Purity* is my small experiment to create a PHP framework that tries to embrace
-the concept of [pure functions](http://en.wikipedia.org/wiki/Pure_function).
+*Purity* is my small experiment to create a small PHP framework that tries to
+avoid side effects.
 
 It also features a Rack-like interface where an app can be any callable that
 receives an env hash and returns a status integer, a header hash and a body string.
